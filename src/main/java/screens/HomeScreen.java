@@ -24,9 +24,20 @@ public class HomeScreen extends BaseScreen{
     @FindBy (xpath = "//*[@resource-id='com.example.svetlana.scheduler:id/nav_fr_logout']")
     MobileElement logoutButton;
 
+    @FindBy(xpath = "//*[@resource-id='com.example.svetlana.scheduler:id/row_container_main']")
+    List<MobileElement> listEvents;
+
+    public EditCreatEventScreen selectFirstEvent(){
+        pause(2000);
+        listEvents.get(0).click();
+
+        return new EditCreatEventScreen(driver);
+
+    }
 
 
     public EditCreatEventScreen initCreationEvent(){
+        should(fabAdd,10);
         fabAdd.click();
         fabAddEvent.click();
         return new EditCreatEventScreen(driver);

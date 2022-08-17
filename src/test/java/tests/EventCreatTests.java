@@ -18,7 +18,7 @@ public class EventCreatTests extends Configuration {
                 .complexLogin(User.builder().email("noa@gmail.com").password("Nnoa12345$").build());
 
     }
-
+    // selectData("18/08/2022")
     @Test
     public void creatNewEventSuccess() {
         Event event = Event.builder()
@@ -27,14 +27,14 @@ public class EventCreatTests extends Configuration {
                 .breaks(3)
                 .wage(60).build();
 
-        boolean isfabPresent = new HomeScreen(driver)
+        boolean isfabPresent   = new HomeScreen(driver)
                 .initCreationEvent()
                 .createNewEvent(event)
                 .isFabAddPresent();
 
         Assert.assertTrue(isfabPresent);
 
-    }//*[@id="selectedElementContainer"]/div/div[2]/div/div[4]/div/div/div/div/div/div/table/tbody/tr[6]/td[2]
+    }
 
     @AfterClass
     public void postCondition() {

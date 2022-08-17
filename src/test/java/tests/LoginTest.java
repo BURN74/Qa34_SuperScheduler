@@ -12,6 +12,7 @@ import screens.SplashScreen;
 public class LoginTest extends Configuration {
 
 
+
     @Test
     public void loginTestSuccess() {
 
@@ -36,6 +37,7 @@ public class LoginTest extends Configuration {
                 .fillPassword("Nnoa12345$")
                 .submitLogin()
                 .isFabAddPresent();
+
         Assert.assertTrue(addPresent);
 
     }
@@ -43,7 +45,9 @@ public class LoginTest extends Configuration {
     @Test
     public void loginSuccessModel(){
 
+
         User user = User.builder().email("noa@gmail.com").password("Nnoa12345$").build();
+        logger.info("Test start with user -->"+user.toString());
         boolean addPresent = new LoginScreen(driver)
                 .complexLogin(user)
                 .isFabAddPresent();

@@ -21,7 +21,7 @@ public class Configuration {
     @BeforeSuite
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName","Nex9");
+        capabilities.setCapability("deviceName","Nex");
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("platformVersion","8.0");
         capabilities.setCapability("appPackage","com.example.svetlana.scheduler");
